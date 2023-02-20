@@ -1,8 +1,3 @@
-import webbrowser
-import pystray
-
-from PIL import Image
-from pystray import MenuItem
 from customtkinter import *
 
 from interface import build_application, version
