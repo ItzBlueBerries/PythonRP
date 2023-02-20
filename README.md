@@ -15,7 +15,7 @@ And it was a bit fun to make. (Besides the  code issues, etc.)
 
 ## Installation
 
-Go to the [Releases]().
+Go to the [Releases](https://github.com/ItzBlueBerries/PythonRP/releases).
 
 Download the latest release.
 
