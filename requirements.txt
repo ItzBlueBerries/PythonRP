@@ -1,0 +1,5 @@
+Pillow~=9.4.0
+darkdetect~=0.8.0
+customtkinter~=5.0.5
+pystray~=0.19.4
+pypresence~=4.2.1
