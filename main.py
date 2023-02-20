@@ -20,33 +20,4 @@ build_application(app)
 if not os.path.exists("PythonRP"):
     os.makedirs("PythonRP")
 
-
-def open_github():
-    webbrowser.open("https://github.com/")
-
-
-def quit_window(icon):
-    icon.stop()
-    app.destroy()
-
-
-def show_window(icon):
-    icon.stop()
-    app.after(0, app.deiconify)
-
-
-def withdraw_window():
-    app.withdraw()
-    image = Image.open("icon.ico")
-    menu = (
-        MenuItem('Quit', quit_window),
-        MenuItem('Show', show_window),
-        MenuItem('Github', open_github)
-    )
-    icon = pystray.Icon("Icon", image, "PythonRP", menu)
-    icon.run()
-
-
-app.protocol("WM_DELETE_WINDOW", withdraw_window)
-
 app.mainloop()
