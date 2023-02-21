@@ -2,13 +2,28 @@ import json
 import pickle
 import time
 import webbrowser
+import requests
 from tkinter import Menu, messagebox
 
 from customtkinter import *
 
 from presence import connect, disconnect, update, create_presence
 
-version = "1.0"
+VERSION = "1.1"
+
+
+def check_for_updates():
+    url = "https://api.github.com/repos/ItzBlueBerries/PythonRP/releases/latest"
+    response = requests.get(url)
+    if response.status_code == 200:
+        latest_version = response.json()["tag_name"]
+        current_version = VERSION
+        if current_version < latest_version:
+            messagebox.showwarning("Update Available", "A new version of PythonRP (v{}) is available. Please download it from the GitHub releases page.".format(latest_version))
+        else:
+            messagebox.showinfo("Latest Release", "This is the latest release PythonRP (v{}).".format(latest_version))
+    else:
+        messagebox.showerror("Error", "Unable to check for updates. Please try again later.")
 
 
 def auto_save(app: CTk, appid: CTkEntry, state: CTkEntry, details: CTkEntry, large_image: CTkEntry, large_text: CTkEntry, small_image: CTkEntry, small_text: CTkEntry,
@@ -135,6 +150,7 @@ def build_application(app: CTk):
     menu.add_cascade(label="File", menu=file_menu)
     menu.add_cascade(label="Help", menu=help_menu)
     help_menu.add_command(label="Github", command=lambda: webbrowser.open("https://github.com/ItzBlueBerries/PythonRP"))
+    help_menu.add_command(label="Check for Updates", command=check_for_updates)
     help_menu.add_command(label="About", command=lambda: messagebox.showinfo("About", "PythonRP - Custom Rich Presences using Python & Pypresence."
                                                                                       "\nCreated by FruitsyOG."
                                                                                       "\nCredits to TomSchimansky for CustomTkinter. (Nicer ui)"
@@ -180,7 +196,7 @@ def build_application(app: CTk):
     file_menu.add_command(label="Quit", command=lambda: app.destroy())
 
     # Title / Version
-    title = CTkLabel(master=app, text=f"PythonRP v{version}")
+    title = CTkLabel(master=app, text=f"PythonRP v{VERSION}")
     title.pack()
 
     # Frame

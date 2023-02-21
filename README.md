@@ -14,6 +14,7 @@ And it was a bit fun to make. (Besides the  code issues, etc.)
 
 - Saving & Loading Presets
 - Auto saves after each application close
+- Automatically checks for updates
 - Rich Presences with buttons included.
 - Whatever else that counts as a feature.
 
@@ -41,10 +42,10 @@ After that, simply run `python main.py`. Make sure the `icon.ico` is in the dire
 If you want to build the application to GUI, use pyinstaller.
 
 ```shell
-pyinstaller --noconfirm --onedir --windowed --icon "icon.ico" --version-file "version_info.txt" --add-data "customtkinter_package_path_here"  main.py
+pyinstaller --noconfirm --onedir --windowed --icon "icon.ico" --version-file "version_info.txt" --add-data "customtkinter_package_path_here" --add-data "icon.ico;."  main.py
 ```
 
-If any of this doesn't work / you don't get it, you can do what I used instead but I did it because I liked it.
+If any of this doesn't work / you don't get it, you can do what I used instead, but I did it because I liked it.
 Use the GUI version, [Auto Py To Exe](https://pypi.org/project/auto-py-to-exe/).
 
 ## Other
