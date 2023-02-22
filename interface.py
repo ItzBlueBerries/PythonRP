@@ -9,7 +9,7 @@ from customtkinter import *
 
 from presence import connect, disconnect, update, create_presence
 
-VERSION = "1.1"
+VERSION = "1.2"
 
 
 def check_for_updates():
@@ -20,6 +20,7 @@ def check_for_updates():
         current_version = VERSION
         if current_version < latest_version:
             messagebox.showwarning("Update Available", "A new version of PythonRP (v{}) is available. Please download it from the GitHub releases page.".format(latest_version))
+            print("Outdated Version!! v{} < v{}".format(current_version, latest_version))
         else:
             messagebox.showinfo("Latest Release", "This is the latest release PythonRP (v{}).".format(latest_version))
     else:
@@ -193,7 +194,22 @@ def build_application(app: CTk):
         start,
         end
     ))
-    file_menu.add_command(label="Quit", command=lambda: app.destroy())
+    file_menu.add_command(label="Quit", command=lambda: auto_save(
+        app,
+        appid,
+        state,
+        details,
+        large_image,
+        large_text,
+        small_image,
+        small_text,
+        button1_name,
+        button1_url,
+        button2_name,
+        button2_url,
+        start,
+        end
+    ))
 
     # Title / Version
     title = CTkLabel(master=app, text=f"PythonRP v{VERSION}")

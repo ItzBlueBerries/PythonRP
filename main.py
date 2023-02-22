@@ -11,6 +11,7 @@ app.geometry("600x530")
 app.resizable(False, False)
 
 build_application(app)
+print("Current Version: v{}".format(VERSION))
 check_for_updates()
 
 if not os.path.exists("PythonRP"):

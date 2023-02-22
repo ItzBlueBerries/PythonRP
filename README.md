@@ -1,4 +1,9 @@
 # PythonRP
+![Commit](https://img.shields.io/github/last-commit/ItzBlueBerries/PythonRP?style=for-the-badge)
+![License](https://img.shields.io/github/license/ItzBlueBerries/PythonRP?style=for-the-badge)
+![Downloads](https://img.shields.io/github/downloads/ItzBlueBerries/PythonRP/total?style=for-the-badge)
+![Build](https://img.shields.io/github/v/release/ItzBlueBerries/PythonRP?include_prereleases&style=for-the-badge)
+![Size](https://img.shields.io/github/repo-size/ItzBlueBerries/PythonRP?style=for-the-badge)
 
 PythonRP is a CustomTkinter / Tkinter application written in Python using pypresence.
 Creating custom rich presences to display on your profiles.
